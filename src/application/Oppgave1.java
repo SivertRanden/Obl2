@@ -8,9 +8,13 @@ public class Oppgave1 {
 
 	public static void main(String[] args) {
 		
-		Product p1 = new Product(1, "Black cup", 10.0, "");
-		Product p2 = new Product(2, "White cup", 12.0, "");
-		Product p3 = new Product(3, "Red cup", 5.0, "");
+		Description d1 = new Description(1, "NO", "fin svart kopp");
+		Description d2 = new Description(2, "NO", "fin hvit kopp");
+		Description d3 = new Description(3, "NO", "fin rød kopp");
+		
+		Product p1 = new Product(1, "Black cup", 10.0, "", d1);
+		Product p2 = new Product(2, "White cup", 12.0, "", d2);
+		Product p3 = new Product(3, "Red cup", 5.0, "", d3);
 		
 		Cart cart = new Cart();
 		

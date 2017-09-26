@@ -12,7 +12,7 @@
 <a href="" >Espanol</a>
 <h1>Kaffekopper AS</h1>
 <p><img src=""></p>
-<p>Ta en titt på våre fantastiske <a href="">Produkter</a></p>
+<p>Ta en titt på våre fantastiske heidas <a href="">Produkter</a></p>
 <p></p>
 </body>
 </html>

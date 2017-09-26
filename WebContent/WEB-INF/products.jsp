@@ -12,6 +12,7 @@
 <tr>${product.name}</tr>
 	<td><img src = ""></td>
 	<td>${product.description.text} </td>
+	mjau
 
 </table>
 </form>

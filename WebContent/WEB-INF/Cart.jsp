@@ -12,7 +12,7 @@
 <a href="" >Espanol</a>
 <h1>Cart</h1>
 <form action="">
-mjau
+mjaus
 <table>
 <tr>
 	<td><b>Name</b></td>

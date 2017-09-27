@@ -8,10 +8,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+<a href = "" Norsk></a> <a href = "" English></a> <a href = "" Español></a>
 <form action="products" method="post">
 <table>
 <c:forEach var="product" items="${cart.products}">
-<tr>${product.pName}</tr>
+<tr><b>${product.pName}</b></tr>
 	<td><img src = ""></td>
 	<td>${product.description.text} </td>
 </c:forEach>

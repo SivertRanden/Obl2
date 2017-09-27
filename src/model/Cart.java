@@ -13,6 +13,10 @@ public class Cart {
 		products = new ArrayList<Product>();
 	}
 	
+	public void setProducts(ArrayList<Product> products) {
+		this.products = products;
+	}
+
 	public Product findProduct(int pno) {
 		Product prod = null;
 		for (Product p : products){

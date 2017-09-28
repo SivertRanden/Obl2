@@ -1,8 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<link rel="stylesheet" type ="text/css" href="WEB-INF/style.css" media="screen" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Cart</title>
 </head>
@@ -15,34 +18,29 @@
 tests
 <table>
 <tr>
-	<td><b>Name</b></td>
-	<td><b>Short description</b></td>
-	<td><b>Price</b></td>
-	<td><b>Quantity</b></td>
-	<td><b>Total</b></td>
+	<td><b>${apptext.name}</b></td>
+	<td><b>${apptext.shortDescription}</b></td>
+	<td><b>${apptext.price}</b></td>
+	<td><b>${apptext.quantity}</b></td>
+	<td><b>${apptext.total}</b></td>
 </tr>
+<c:forEach var="product" items="${cart.products}">
 <tr>
-	<td></td>
-	<td></td>
-	<td></td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td></td>
-	<td></td>
-	<td></td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
-	<td></td>
-	<td></td>
+	<td>${product.pName}</td>
+	<td>Kort beskrivelse</td>
+	<td>${product.priceInEuro}</td>
+	<td>antall</td>
+	<td>total</td>
 </tr>
 
+</c:forEach>
+<tr>
+	<td><b>Total amount:</b></td>
+	<td>penger</td>
+</tr>
 </table>
 </form>
-<a href="" >Home</a>
-<a href="" >Products</a>
+<a href="/Obl2/home">${apptext.home}</a>
+<a href="/Obl2/cart">${apptext.cart}</a>
 </body>
 </html>

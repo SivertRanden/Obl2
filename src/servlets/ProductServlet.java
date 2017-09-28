@@ -1,6 +1,10 @@
 package servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Locale;
+import java.util.ResourceBundle;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,27 +27,49 @@ public class ProductServlet extends HttpServlet {
     }
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Description d1 = new Description(1, "NO", "fin svart kopp");
-		Description d2 = new Description(2, "NO", "fin hvit kopp");
-		Description d3 = new Description(3, "NO", "fin rød kopp");
+        Locale locale = Locale.getDefault();
+//		Locale locale = new Locale("en");
+        ResourceBundle apptexts = ResourceBundle.getBundle("apptexts", locale);
+        request.getSession().setAttribute("apptext", apptexts);
+		
+		Description d1 = new Description(1, "NO", apptexts.getString("cup1"));
+		Description d2 = new Description(2, "NO", apptexts.getString("cup2"));
 		
 		Product p1 = new Product(1, "Black cup", 10.0, "", d1);
 		Product p2 = new Product(2, "White cup", 12.0, "", d2);
-		Product p3 = new Product(3, "Red cup", 5.0, "", d3);
 				
-		Cart cart = new Cart();
+		ArrayList<Product> products = new ArrayList<Product>();
 		
-		cart.addProduct(p1);
-		cart.addProduct(p2);
-		cart.addProduct(p3);
+		products.add(p1);
+		products.add(p2);
 		
-		request.getSession().setAttribute("cart", cart);
+		request.getSession().setAttribute("products", products);
 		
 		request.getRequestDispatcher("WEB-INF/products.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+		Cart cart;
+		if(request.getSession().getAttribute("cart") != null) {
+			cart = (Cart)request.getSession().getAttribute("cart");
+		}else {
+			cart = new Cart();
+		}
+		int pno = Integer.parseInt(request.getParameter("pno"));
+		String pName = request.getParameter("pName");
+		double priceInEuro = Double.parseDouble(request.getParameter("priceInEuro"));
+		String imageFile = request.getParameter("imageFile");
+		
+		String langCode = request.getParameter("langCode");
+		String descriptionText = request.getParameter("descriptionText");
+		Description d = new Description(pno, langCode, descriptionText);
+		Product p = new Product(pno, pName, priceInEuro, imageFile, d);
+		cart.addProduct(p);
+		
+		request.getSession().setAttribute("cart", cart);
+		response.sendRedirect("products");
+		
+		
 		
 	}
 

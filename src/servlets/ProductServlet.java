@@ -32,8 +32,8 @@ public class ProductServlet extends HttpServlet {
         ResourceBundle apptexts = ResourceBundle.getBundle("apptexts", locale);
         request.getSession().setAttribute("apptext", apptexts);
 		
-		Description d1 = new Description(1, "NO", apptexts.getString("cup1"));
-		Description d2 = new Description(2, "NO", apptexts.getString("cup2"));
+		Description d1 = new Description(1, "NO", apptexts.getString("blackCup"));
+		Description d2 = new Description(2, "NO", apptexts.getString("whiteCup"));
 		
 		Product p1 = new Product(1, "Black cup", 10.0, "", d1);
 		Product p2 = new Product(2, "White cup", 12.0, "", d2);

@@ -12,8 +12,8 @@
 <a href="/Obl2/home?language=en" >English (US)</a>
 <a href="/Obl2/home?language=es" >Espanol</a>
 <h1>Kaffekopper AS</h1>
-<p><img src=""></p>
-<p>${apptext.haveALook}<a href="/Obl2/products"> ${apptext.products}</a></p>
+<p><img src="img/logo.png"></p>
+<p>${apptext.haveALook} <a href="/Obl2/products">${apptext.products}</a></p>
 <p></p>
 </body>
 </html>

@@ -8,9 +8,9 @@
 <title>Home</title>
 </head>
 <body>
-<a href="" >Norsk</a>
-<a href="" >English (US)</a>
-<a href="" >Espanol</a>
+<a href="/Obl2/home?language=no" >Norsk</a>
+<a href="/Obl2/home?language=en" >English (US)</a>
+<a href="/Obl2/home?language=es" >Espanol</a>
 <h1>Kaffekopper AS</h1>
 <p><img src=""></p>
 <p>${apptext.haveALook}<a href="/Obl2/products"> ${apptext.products}</a></p>

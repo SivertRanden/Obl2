@@ -5,17 +5,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link rel="stylesheet" type ="text/css" href="WEB-INF/style.css"/>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type ="text/css" href="style.css"/>
 <title>Cart</title>
 </head>
 <body>
-<a href="" >Norsk</a>
-<a href="" >English (US)</a>
-<a href="" >Espanol</a>
+<a href="/Obl2/cart?language=no" >Norsk</a>
+<a href="/Obl2/cart?language=en" >English (US)</a>
+<a href="/Obl2/cart?language=es" >Espanol</a>
 <h1>Cart</h1>
-<form action="">
-tests
 <table>
 <tr>
 	<td><b>${apptext.name}</b></td>
@@ -29,14 +27,14 @@ tests
 	<td>${product.pName}</td>
 	<td>Kort beskrivelse</td>
 	<td>${product.priceInEuro}</td>
-	<td>antall</td>
+
 	<td>total</td>
 </tr>
 
 </c:forEach>
 <tr>
-	<td><b>Total amount:</b></td>
-	<td>penger</td>
+	<td><b>${apptext.totalAmount}: </b></td>
+	<td><b>${cart.sum}</b></td>
 </tr>
 </table>
 </form>

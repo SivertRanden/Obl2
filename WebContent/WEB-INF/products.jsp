@@ -4,22 +4,21 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link rel="stylesheet" type ="text/css" href="style.css"/>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" type ="text/css" href="style.css"/>
 <title>Products</title>
 </head>
 <body>
-<a href="" >Norsk</a>
-<a href="" >English (US)</a>
-<a href="" >Espanol</a>
-<form action="products" method="post">
-<table>
+<a href="/Obl2/products?language=no" >Norsk</a>
+<a href="/Obl2/products?language=en" >English (US)</a>
+<a href="/Obl2/products?language=es" >Espanol</a>
+<table style="border: 1px solid black; ">
 <c:forEach var="product" items="${products}">
 	<tr>
 		<td><b>${product.pName}</b></td>
 	</tr>
 	<tr>
-		<td>${apptext.name}: ${product.pName}
+		<td>${apptext.name}: ${product.pName} ${product.pno}
 		</td>
 	<tr>
 	<tr>
@@ -30,6 +29,7 @@
 	</tr>
 	<tr>
 		<td>
+		<form action="products" method="post">
 		<input type="hidden" name="pno" value="${product.pno}" />
 		<input type="hidden" name="pName" value="${product.pName}" />
 		<input type="hidden" name="priceInEuro" value="${product.priceInEuro}" />
@@ -37,10 +37,12 @@
 		<input type="hidden" name="langCode" value="${product.description.langCode}" />
 		<input type="hidden" name="descriptionText" value="${product.description.text}" />
 		
-		<input type="submit" value="${apptext.addToCart}"></td>
+		<input type="submit" value="${apptext.addToCart}">
+		</form></td>
+	
 </c:forEach>
 </table>
-</form>
+
 <a href="/Obl2/home">${apptext.home}</a>
 <a href="/Obl2/cart">${apptext.cart}</a>
 </body>

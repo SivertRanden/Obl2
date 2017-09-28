@@ -13,14 +13,23 @@ public class HomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//Locale locale = Locale.getDefault();
-		Locale locale = new Locale("en");
-        ResourceBundle apptexts = ResourceBundle.getBundle("apptexts_en", locale);
+		String languageCode = request.getParameter("language");
+		Locale locale = null;
+		if(languageCode == null) {
+			languageCode = (String)request.getSession().getAttribute("languageCode");
+			if(languageCode == null){
+				locale = Locale.getDefault();
+			}else {
+				locale = new Locale(languageCode);
+			}
+		}else {
+			request.getSession().setAttribute("languageCode", languageCode);
+			locale = new Locale(languageCode);
+		}
+        ResourceBundle apptexts = ResourceBundle.getBundle("apptexts", locale);
 		
         request.getSession().setAttribute("apptext", apptexts);
         
-//        Locale locale = new Locale("en");
-//        Locale locale = new Locale("es");
 		request.getRequestDispatcher("WEB-INF/home.jsp").forward(request, response);
 	}
 

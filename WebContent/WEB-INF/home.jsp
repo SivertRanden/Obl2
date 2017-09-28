@@ -13,7 +13,7 @@
 <a href="" >Espanol</a>
 <h1>Kaffekopper AS</h1>
 <p><img src=""></p>
-<p>${apptext.haveALook}<a href="/Obl2/products">${apptext.products}</a></p>
+<p>${apptext.haveALook}<a href="/Obl2/products"> ${apptext.products}</a></p>
 <p></p>
 </body>
 </html>

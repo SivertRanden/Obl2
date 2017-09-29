@@ -26,7 +26,7 @@
 <c:forEach var="product" items="${cart.products}">
 <tr>
 	<td>${product.pName}</td>
-	<td>Kort beskrivelse</td>
+	<td><dat152:printDesc desc="${product.description}"/></td>
 	<td>${product.priceInEuro}</td>
 
 	<td>total</td>

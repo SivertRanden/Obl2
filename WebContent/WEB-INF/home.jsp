@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    <%@ taglib uri="dat152-tags" prefix="dat152" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,6 +15,6 @@
 <h1>Kaffekopper AS</h1>
 <p><img src="img/logo.png"></p>
 <p>${apptext.haveALook} <a href="/Obl2/products">${apptext.products}</a></p>
-<p></p>
+<dat152:printCopyright year="2009"/>
 </body>
 </html>
